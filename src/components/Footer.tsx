@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <Shield className="h-5 w-5 text-cyber-accent mr-2" />
-              <span className="text-lg font-bold text-cyber-text">Cyber<span className="text-cyber-secondary">Sec</span></span>
+              <span className="text-lg font-bold text-cyber-text">Harrish <span className="text-cyber-secondary">Raj</span></span>
             </div>
             
             <div className="text-cyber-muted text-sm text-center md:text-right">
