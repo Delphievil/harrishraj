@@ -54,12 +54,16 @@ const Hero = () => {
               <a 
                 href="#projects" 
                 className="px-6 py-3 bg-cyber-accent text-cyber-darker font-medium rounded hover:bg-cyber-accent/90 transition-all flex items-center justify-center sm:justify-start"
+                data-cursor-text="View Projects"
+                data-cursor-variant="view"
               >
                 View My Work <ArrowRight size={16} className="ml-2" />
               </a>
               <a 
                 href="#contact" 
                 className="px-6 py-3 border border-cyber-muted/30 text-cyber-text rounded hover:bg-cyber-light/10 transition-all flex items-center justify-center sm:justify-start"
+                data-cursor-text="Get in Touch"
+                data-cursor-variant="hack"
               >
                 Contact Me
               </a>
