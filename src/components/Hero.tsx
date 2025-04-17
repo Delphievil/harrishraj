@@ -53,12 +53,12 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a 
-                href="#projects" 
+                href="#experience" 
                 className="px-6 py-3 bg-cyber-accent text-cyber-darker font-medium rounded hover:bg-cyber-accent/90 transition-all flex items-center justify-center sm:justify-start"
                 data-cursor-text="View Projects"
                 data-cursor-variant="view"
               >
-                View My Work <ArrowRight size={16} className="ml-2" />
+                View My Experience <ArrowRight size={16} className="ml-2" />
               </a>
               <a 
                 href="#contact" 
