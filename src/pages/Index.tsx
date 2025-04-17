@@ -25,7 +25,7 @@ const Index = () => {
 
   // Set document title and handle loading
   useEffect(() => {
-    document.title = "Cybersecurity Portfolio";
+    document.title = "A. Harrish Raj | Senior Information Security Engineer";
     
     // Simulate loading delay
     const timer = setTimeout(() => {

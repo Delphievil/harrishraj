@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import TypeWriter from './TypeWriter';
 
 const Hero = () => {
-  const titles = ['Cybersecurity Analyst', 'Penetration Tester', 'Security Consultant', 'Network Defender'];
+  const titles = ['Senior Information Security Engineer', 'GRC Specialist', 'Cloud Security Expert', 'Cybersecurity Professional'];
   
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
@@ -35,8 +35,8 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-cyber-text">
-              Securing Digital Assets <br />
-              in the Modern Threat Landscape
+              A. Harrish Raj <br />
+              Information Security Professional
             </h1>
             
             <div className="h-8 mb-6">
@@ -46,8 +46,9 @@ const Hero = () => {
             </div>
             
             <p className="text-cyber-muted mb-8 max-w-lg">
-              Specialized in identifying vulnerabilities, implementing defensive strategies, 
-              and ensuring your systems remain secure against evolving cyber threats.
+              Specializing in Governance, Risk, and Compliance (GRC), cloud security, and information security 
+              with expertise in globally recognized frameworks including CIS Controls, NIST, ISO/IEC, GDPR, PCI DSS, 
+              and the MITRE ATT&CK Framework.
             </p>
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">

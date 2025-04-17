@@ -7,98 +7,164 @@ const Experience = () => {
   
   const workExperience = [
     {
-      title: 'Senior Security Consultant',
-      company: 'CyberShield Solutions',
-      period: '2020 - Present',
-      description: 'Lead security consultant for enterprise clients across financial services and healthcare sectors.',
+      title: 'Senior Information Security Engineer',
+      company: 'Banyan Cloud Inc.',
+      period: 'May 2024 - Present',
+      description: 'Working on security initiatives and regulatory compliance.',
       responsibilities: [
-        'Conduct comprehensive security assessments and penetration tests for Fortune 500 clients',
-        'Lead a team of 5 security professionals on large-scale security projects',
-        'Develop custom security solutions for complex enterprise environments',
-        'Present security findings to executive stakeholders and boards',
+        'Working on the Middle East regulations and Cyber Threat Intelligence using MITRE ATT&CK Framework for Product\'s AI Capabilities',
+        'Creating and implementing security controls of product according to BFSI regulations of India'
       ],
       icon: <Shield className="h-5 w-5" />,
     },
     {
-      title: 'Cybersecurity Analyst',
-      company: 'DefendTech Inc.',
-      period: '2018 - 2020',
-      description: 'Specialized in vulnerability management and security monitoring for cloud environments.',
+      title: 'Information Security Engineer',
+      company: 'Banyan Cloud Inc.',
+      period: 'August 2021 - April 2024',
+      description: 'Managed security across multiple domains while ensuring compliance with global standards.',
       responsibilities: [
-        'Implemented and maintained SIEM solutions for real-time threat detection',
-        'Performed vulnerability assessments and coordinated remediation efforts',
-        'Responded to security incidents and developed mitigation strategies',
-        'Managed cloud security controls across AWS and Azure environments',
+        'Managed security across all domains, including testing, monitoring regulations, and mapping security controls while collaborating with GRC teams',
+        'Ensured product security and compliance with GDPR, NIST, PCI DSS, HIPAA, ISO/IEC standards, and DORA EU through control mapping and implementation',
+        'Worked with cloud SMEs to test use cases, identify vulnerabilities, and secure cloud IAM across diverse environments',
+        'Contributed to R&D in vulnerability assessment, cyber threat intelligence, and malware analysis',
+        'Designed and implemented privacy regulations and security controls for the US, UK, and Middle East, ensuring regional compliance',
+        'Assigned CIS Benchmarks and MITRE ATT&CK controls to cloud environments (AWS, Azure, OCI), strengthening security and compliance'
+      ],
+      icon: <Shield className="h-5 w-5" />,
+    },
+    {
+      title: 'Data Security Consultant',
+      company: 'Banyan Cloud Inc.',
+      period: 'May 2021 - August 2021',
+      description: 'Conducted security testing and implemented data protection solutions.',
+      responsibilities: [
+        'Conducted security testing across multiple environments, identifying and mitigating vulnerabilities to protect internal data',
+        'Collaborated with the infrastructure team to implement a DLP solution, preventing unauthorized data access and theft'
       ],
       icon: <Briefcase className="h-5 w-5" />,
     },
     {
-      title: 'Network Security Engineer',
-      company: 'SecureNet Technologies',
-      period: '2015 - 2018',
-      description: 'Focused on designing and implementing secure network architectures.',
+      title: 'Cyber Security Intern',
+      company: 'Virtually Testing Foundation',
+      period: 'January 2021 - March 2021',
+      description: 'Remote internship focused on foundational cybersecurity skills.',
       responsibilities: [
-        'Designed and deployed network security controls including firewalls and IDS/IPS',
-        'Conducted security audits against industry standards (NIST, ISO 27001)',
-        'Developed and implemented security policies and procedures',
-        'Provided technical guidance on secure network design principles',
+        'Gained foundational cybersecurity skills through hands-on learning and research',
+        'Completed mini projects to deepen domain knowledge and practical expertise'
       ],
-      icon: <Shield className="h-5 w-5" />,
-    },
+      icon: <Briefcase className="h-5 w-5" />,
+    }
   ];
   
   const education = [
     {
-      degree: 'Master of Science in Cybersecurity',
-      institution: 'National University of Cybersecurity',
-      period: '2014 - 2015',
-      description: 'Specialized in advanced penetration testing and security architecture.',
+      degree: 'Bachelor of Engineering, Computer Science & Engineering',
+      institution: 'Dhanalakshmi Srinivasan Engineering College',
+      period: 'August 2017 - June 2021',
+      description: 'CGPA: 8.2/10 (equivalent to GPA: 3.32/4.0)',
       achievements: [
-        'Graduated with highest honors (4.0 GPA)',
-        'Published research on zero-day vulnerability detection methods',
-        'Led the university\'s ethical hacking team to national competition finals',
+        'Completed coursework in computer science and engineering fundamentals',
+        'Gained strong technical foundation in programming and security concepts'
       ],
       icon: <GraduationCap className="h-5 w-5" />,
     },
     {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'Tech University',
-      period: '2010 - 2014',
-      description: 'Focus on network security and secure software development.',
+      degree: 'Higher Secondary Certificate, Computer Science',
+      institution: 'St. James Matriculation Higher Secondary School',
+      period: '2016 - 2017',
+      description: 'Percentage: 80.3% (equivalent to GPA: 3.21/4.0)',
       achievements: [
-        'Dean\'s List all semesters',
-        'Completed special project on secure coding practices',
-        'Teaching assistant for network security courses',
+        'Focused on computer science curriculum',
+        'Developed early interest in technology and programming'
       ],
       icon: <GraduationCap className="h-5 w-5" />,
     },
+    {
+      degree: 'Secondary School Leaving Certificate',
+      institution: 'St. James Matriculation Higher Secondary School',
+      period: '2014 - 2015',
+      description: 'Percentage: 87%',
+      achievements: [
+        'Established strong academic foundation',
+        'Participated in extracurricular activities'
+      ],
+      icon: <GraduationCap className="h-5 w-5" />,
+    }
   ];
   
   const certifications = [
     {
-      title: 'Certified Information Systems Security Professional (CISSP)',
-      issuer: 'ISC²',
-      date: '2019',
+      title: 'Professional Cloud Security Engineer',
+      issuer: 'Google Cloud',
+      date: 'Certified',
       icon: <Award className="h-5 w-5" />,
     },
     {
-      title: 'Certified Ethical Hacker (CEH)',
-      issuer: 'EC-Council',
-      date: '2018',
+      title: 'Cloud Cybersecurity Certificate',
+      issuer: 'Google Cloud',
+      date: 'Certified',
       icon: <Award className="h-5 w-5" />,
     },
     {
-      title: 'Offensive Security Certified Professional (OSCP)',
-      issuer: 'Offensive Security',
-      date: '2017',
+      title: 'Certified Cyber Threat Intelligence Analyst (CCTIA)',
+      issuer: 'Cyber Training 365',
+      date: 'Certified',
       icon: <Award className="h-5 w-5" />,
     },
     {
-      title: 'CompTIA Security+',
-      issuer: 'CompTIA',
-      date: '2015',
+      title: 'ISO/IEC 27001 Information Security Associate',
+      issuer: 'SkillFront',
+      date: 'Associate',
       icon: <Award className="h-5 w-5" />,
     },
+    {
+      title: 'Third Party Risk Management (CTPRME)',
+      issuer: 'Security Scorecard',
+      date: 'Certified',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'IBM Cyber Security Analyst',
+      issuer: 'IBM',
+      date: 'Certified',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'Google IT Support Specialist',
+      issuer: 'Google & Coursera',
+      date: 'Specialist',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'Ransomware Uncovered',
+      issuer: 'ICTTF - Cyber Risk Academy',
+      date: 'Specialist',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'SASE Expert',
+      issuer: 'CATO Network',
+      date: 'Level 1 & 2',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'Cyber Samurai Program in Cyber Defence',
+      issuer: 'IIT Jodhpur (TISC)',
+      date: 'Entry-Level',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'Google Cyber Security Specialization',
+      issuer: 'Google & Coursera',
+      date: 'Specialist',
+      icon: <Award className="h-5 w-5" />,
+    },
+    {
+      title: 'Palo Alto Cyber Security Networks Professional',
+      issuer: 'Palo Alto & Coursera',
+      date: 'Professional',
+      icon: <Award className="h-5 w-5" />,
+    }
   ];
   
   return (
@@ -114,7 +180,7 @@ const Experience = () => {
             <span className="text-cyber-secondary">~/</span>Experience
           </h2>
           <p className="text-cyber-muted max-w-2xl mx-auto">
-            My professional journey in the cybersecurity field, including work experience, 
+            My professional journey in information security, including work experience, 
             education, and industry certifications.
           </p>
         </div>

@@ -1,52 +1,52 @@
 
 import { useState } from 'react';
-import { ExternalLink, Github, ArrowRight, Shield, Lock, FileSearch } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Shield, Lock, FileSearch, Bot, Code, Database } from 'lucide-react';
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
   
   const projects = [
     {
-      title: 'Corporate Network Penetration Test',
-      type: 'Offensive Security',
-      description: 'Conducted a comprehensive penetration test for a financial services company, identifying critical vulnerabilities in their network infrastructure and providing actionable remediation steps.',
-      technologies: ['Kali Linux', 'Metasploit', 'Burp Suite', 'Nmap', 'OWASP ZAP'],
+      title: 'Shayera AI - Virtual Assistant for PC',
+      type: 'AI & Development',
+      description: 'Led a team of three members to create a voice-controlled virtual assistant for computers using artificial intelligence for voice recognition and response.',
+      technologies: ['Python', 'AI', 'Voice Recognition', 'Natural Language Processing'],
       achievements: [
-        'Identified and documented 12 critical security vulnerabilities',
-        'Provided detailed remediation strategies prioritized by risk level',
-        'Developed custom exploitation tools for unique environment constraints',
-        'Delivered executive report and technical findings documentation',
+        'Served as team lead, guiding team members in code development',
+        'Implemented voice control functionality with AI-powered recognition',
+        'Created a responsive virtual assistant that can perform various computer tasks',
+        'Established foundation for future development of more advanced AI assistant models'
+      ],
+      icon: <Bot className="h-10 w-10" />,
+      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a',
+    },
+    {
+      title: 'Neural Network from Scratch in TensorFlow',
+      type: 'Machine Learning',
+      description: 'Completed a guided project through Coursera to implement a neural network from scratch using TensorFlow and solve a multi-class classification problem.',
+      technologies: ['TensorFlow', 'Python', 'Neural Networks', 'Machine Learning', 'Classification'],
+      achievements: [
+        'Implemented neural network architecture from scratch using TensorFlow',
+        'Successfully solved multi-class classification problems',
+        'Gained deeper understanding of neural network fundamentals',
+        'Applied machine learning concepts to practical problems'
+      ],
+      icon: <Code className="h-10 w-10" />,
+      image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb',
+    },
+    {
+      title: 'Exposing Vulnerable IP Cameras around the Globe',
+      type: 'Security Research',
+      description: 'Led a team of four members to experiment with ways to find vulnerable IP cameras globally with limited access, as part of a project organized by the College Research Development Department.',
+      technologies: ['Security Research', 'Network Security', 'Vulnerability Assessment', 'OSINT'],
+      achievements: [
+        'Served as project lead for a security research initiative',
+        'Developed methodology to identify vulnerable IP cameras',
+        'Demonstrated real-world security vulnerabilities in IoT devices',
+        'Contributed to awareness of IoT security issues'
       ],
       icon: <Shield className="h-10 w-10" />,
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
-    },
-    {
-      title: 'Security Compliance Framework Implementation',
-      type: 'Governance & Compliance',
-      description: 'Developed and implemented a comprehensive security compliance framework aligned with ISO 27001 and NIST standards for a healthcare organization handling sensitive patient data.',
-      technologies: ['ISO 27001', 'NIST', 'HIPAA', 'GRC Tools', 'Risk Assessment'],
-      achievements: [
-        'Successfully guided client through ISO 27001 certification process',
-        'Reduced compliance gaps by 94% within 6 months',
-        'Implemented automated compliance monitoring tools',
-        'Created training materials for staff security awareness',
-      ],
-      icon: <FileSearch className="h-10 w-10" />,
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa',
-    },
-    {
-      title: 'Cloud Security Architecture Design',
-      type: 'Defensive Security',
-      description: 'Designed and implemented a secure cloud architecture for a SaaS startup, incorporating security controls across all layers of the application stack and CI/CD pipeline.',
-      technologies: ['AWS Security', 'Azure Sentinel', 'IAM', 'DevSecOps', 'Container Security'],
-      achievements: [
-        'Implemented zero-trust architecture across cloud resources',
-        'Reduced attack surface by 76% through proper segmentation',
-        'Integrated security testing into CI/CD pipeline',
-        'Designed disaster recovery plan with 99.99% availability',
-      ],
-      icon: <Lock className="h-10 w-10" />,
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
+      image: 'https://images.unsplash.com/photo-1601972599720-36938d4ecd31',
     },
   ];
   
@@ -64,8 +64,8 @@ const Projects = () => {
             <span className="text-cyber-secondary">#</span> Featured Projects
           </h2>
           <p className="text-cyber-muted max-w-2xl mx-auto">
-            A selection of my professional cybersecurity projects demonstrating technical 
-            expertise across various security domains.
+            A selection of my technical projects demonstrating expertise in security, 
+            AI development, and research initiatives.
           </p>
         </div>
         

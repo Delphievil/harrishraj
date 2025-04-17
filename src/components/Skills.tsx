@@ -10,83 +10,83 @@ const Skills = () => {
   
   const categories = [
     { id: 'all', label: 'All Skills' },
-    { id: 'offensive', label: 'Offensive Security' },
-    { id: 'defensive', label: 'Defensive Security' },
+    { id: 'offensive', label: 'Security Frameworks' },
+    { id: 'defensive', label: 'Technical Skills' },
     { id: 'compliance', label: 'Compliance & Governance' },
   ];
   
   const skills = [
     {
-      title: 'Penetration Testing',
-      icon: <Bug className="h-10 w-10 text-cyber-accent" />,
-      description: 'Authorized simulated attacks to evaluate the security of systems and identify vulnerabilities.',
-      categories: ['offensive'],
+      title: 'Compliance & Regulatory Frameworks',
+      icon: <CheckCircle className="h-10 w-10 text-cyber-accent" />,
+      description: 'Expert in GDPR, PCI DSS, HIPAA, ISO/IEC, DORA EU, NIST, CIS Controls, MITRE ATT&CK, and 40+ other regulations and frameworks.',
+      categories: ['compliance', 'offensive'],
     },
     {
-      title: 'Vulnerability Assessment',
+      title: 'Security Documentation & Risk Assessment',
       icon: <FileSearch className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Systematic review of security weaknesses in systems and applications.',
-      categories: ['offensive', 'defensive'],
-    },
-    {
-      title: 'Security Architecture',
-      icon: <Shield className="h-10 w-10 text-cyber-accent" />,
-      description: 'Designing security systems that protect against unauthorized access and data breaches.',
-      categories: ['defensive'],
-    },
-    {
-      title: 'Incident Response',
-      icon: <AlertTriangle className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Methodology for handling security breaches and restoring normal operations.',
-      categories: ['defensive'],
-    },
-    {
-      title: 'Network Security',
-      icon: <Network className="h-10 w-10 text-cyber-accent" />,
-      description: 'Protection of network infrastructure and data from unauthorized access.',
-      categories: ['defensive'],
-    },
-    {
-      title: 'Cloud Security',
-      icon: <Cloud className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Securing cloud environments and applications against modern threats.',
+      description: 'Skilled in creating comprehensive security documentation and conducting thorough risk assessments.',
       categories: ['defensive', 'compliance'],
     },
     {
-      title: 'Security Compliance',
-      icon: <CheckCircle className="h-10 w-10 text-cyber-accent" />,
-      description: 'Ensuring systems meet industry standards and regulatory requirements like GDPR, HIPAA, PCI DSS.',
+      title: 'Cloud Security',
+      icon: <Cloud className="h-10 w-10 text-cyber-accent" />,
+      description: 'Expertise in securing AWS and GCP environments, implementing best practices for cloud infrastructure.',
+      categories: ['defensive'],
+    },
+    {
+      title: 'Vulnerability Assessment & Management',
+      icon: <AlertTriangle className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Proficient in identifying, assessing, and managing security vulnerabilities across systems and applications.',
+      categories: ['defensive', 'offensive'],
+    },
+    {
+      title: 'Security Tools',
+      icon: <Settings className="h-10 w-10 text-cyber-accent" />,
+      description: 'Skilled with Burp Suite, Metasploit, Nikto, OWASP ZAP, Wireshark, Snort, and various open-source security tools.',
+      categories: ['defensive', 'offensive'],
+    },
+    {
+      title: 'Network Security Monitoring & Analysis',
+      icon: <Network className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Expert in monitoring network traffic, analyzing security events, and identifying potential threats.',
+      categories: ['defensive'],
+    },
+    {
+      title: 'SIEM & SOAR',
+      icon: <Terminal className="h-10 w-10 text-cyber-accent" />,
+      description: 'Experience with Security Information and Event Management and Security Orchestration, Automation, and Response tools.',
+      categories: ['defensive'],
+    },
+    {
+      title: 'Security Control Mapping & Benchmarking',
+      icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Skilled in mapping security controls to standards and frameworks, establishing security benchmarks.',
+      categories: ['compliance', 'offensive'],
+    },
+    {
+      title: 'Intrusion Detection & Prevention',
+      icon: <Shield className="h-10 w-10 text-cyber-accent" />,
+      description: 'Expertise in implementing and managing Intrusion Detection and Prevention Systems (IDS/IPS).',
+      categories: ['defensive'],
+    },
+    {
+      title: 'GRC',
+      icon: <CheckCircle className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Specialization in Governance, Risk, and Compliance frameworks and methodologies.',
       categories: ['compliance'],
     },
     {
-      title: 'Ethical Hacking',
-      icon: <Terminal className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Legally breaking into computers and devices to test organizational defenses.',
-      categories: ['offensive'],
-    },
-    {
-      title: 'Database Security',
-      icon: <Database className="h-10 w-10 text-cyber-accent" />,
-      description: 'Protecting databases from compromises of confidentiality, integrity, and availability.',
-      categories: ['defensive'],
-    },
-    {
-      title: 'Security Auditing',
-      icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Systematic evaluation of security of information system by measuring compliance to established criteria.',
-      categories: ['compliance', 'defensive'],
-    },
-    {
-      title: 'Cryptography',
-      icon: <Lock className="h-10 w-10 text-cyber-accent" />,
-      description: 'Implementation of encryption techniques to secure data in transit and at rest.',
-      categories: ['defensive'],
-    },
-    {
-      title: 'Security Engineering',
-      icon: <Settings className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Building security into systems from the ground up using secure coding practices.',
+      title: 'OWASP TOP 10 & Security Standards',
+      icon: <Bug className="h-10 w-10 text-cyber-accent" />,
+      description: 'Deep knowledge of OWASP TOP 10, NIST, CIS framework, and benchmarks for application security.',
       categories: ['offensive', 'defensive'],
+    },
+    {
+      title: 'Programming Skills',
+      icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Proficient in Python and C++ for security automation, tool development, and security testing.',
+      categories: ['defensive'],
     },
   ];
   
@@ -109,8 +109,8 @@ const Skills = () => {
             <span className="text-cyber-accent">/&gt;</span>
           </h2>
           <p className="text-cyber-muted max-w-2xl mx-auto">
-            With expertise across multiple cybersecurity domains, I provide comprehensive protection 
-            strategies against sophisticated threats in today's digital landscape.
+            With expertise across multiple cybersecurity domains including GRC, cloud security, and information security,
+            I provide comprehensive protection strategies against sophisticated threats.
           </p>
         </div>
         

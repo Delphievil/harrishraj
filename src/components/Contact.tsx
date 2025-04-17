@@ -46,19 +46,19 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: 'Email',
-      value: 'contact@cybersecurity.pro',
-      link: 'mailto:contact@cybersecurity.pro',
+      value: 'aharrishraj1@gmail.com',
+      link: 'mailto:aharrishraj1@gmail.com',
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+91 8838767615',
+      link: 'tel:+918838767615',
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Bengaluru, India',
       link: null,
     },
   ];
@@ -67,19 +67,19 @@ const Contact = () => {
     {
       icon: <Github className="h-5 w-5" />,
       label: 'Github',
-      link: 'https://github.com/username',
+      link: 'https://github.com/',
       color: 'hover:text-white',
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
-      link: 'https://linkedin.com/in/username',
+      link: 'https://linkedin.com/in/',
       color: 'hover:text-blue-400',
     },
     {
       icon: <Twitter className="h-5 w-5" />,
       label: 'Twitter',
-      link: 'https://twitter.com/username',
+      link: 'https://twitter.com/',
       color: 'hover:text-blue-500',
     },
   ];
