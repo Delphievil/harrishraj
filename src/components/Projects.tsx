@@ -7,6 +7,20 @@ const Projects = () => {
   
   const projects = [
     {
+      title: 'CVE Alert Notification Mechanism',
+      type: 'Vulnerability Alert',
+      description: 'Implemented a CVE alert notification mechanism to automate vulnerability tracking and alerting, enabling timely risk assessment and remediation planning within the organization.',
+      technologies: ['Python', 'lib'],
+      achievements: [
+        'Served as team lead, guiding team members in code development',
+        'Designed and Implemented the required techstacks and Softwares with NIST CVE Database',
+        'Created a own mechanism that fetch the latest CVEs from third party and NVD Database',
+        'Currrently, it supports Cloud,software libraries and Database techstacks'
+      ],
+      icon: <Bot className="h-10 w-10" />,
+      image: 'https://distill.io/blog/cybersecurity-cve-alerts/images/banner.jpg',
+    },
+    {
       title: 'Shayera AI - Virtual Assistant for PC',
       type: 'AI & Development',
       description: 'Led a team of three members to create a voice-controlled virtual assistant for computers using artificial intelligence for voice recognition and response.',
