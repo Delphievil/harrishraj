@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a href="#home" className="flex items-center space-x-2 text-cyber-accent group">
           <Shield className="h-6 w-6 group-hover:text-cyber-glow transition-colors duration-300" />
-          <span className="text-xl font-bold font-mono tracking-tight">Harrishraj<span className="text-cyber-secondary">Portfolio</span></span>
+          <span className="text-xl font-bold font-mono tracking-tight">Harrish<span className="text-cyber-secondary">Raj</span></span>
         </a>
 
         {/* Desktop Navigation */}
