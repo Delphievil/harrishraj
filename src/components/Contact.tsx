@@ -153,7 +153,7 @@ const Contact = () => {
                 download
                 className="inline-flex items-center px-4 py-2 bg-cyber-accent text-cyber-dark font-semibold rounded-md hover:bg-cyber-glow transition"
               >
-                📄 Resume.pdf
+                📄 Harrishraj-sr.infosec-eng.pdf
               </a>
             </div>
 
