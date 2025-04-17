@@ -13,8 +13,17 @@ import LoadingScreen from "../components/LoadingScreen";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [currentGradient, setCurrentGradient] = useState(1);
+  
+  const gradientClasses = [
+    "gradient-cyber-1",
+    "gradient-cyber-2",
+    "gradient-cyber-3",
+    "gradient-cyber-4",
+    "gradient-cyber-5"
+  ];
 
-  // Set document title
+  // Set document title and handle loading
   useEffect(() => {
     document.title = "Cybersecurity Portfolio";
     
@@ -25,9 +34,27 @@ const Index = () => {
     
     return () => clearTimeout(timer);
   }, []);
+  
+  // Cycle through gradients every 30 seconds
+  useEffect(() => {
+    if (!isLoading) {
+      const interval = setInterval(() => {
+        setCurrentGradient((prev) => (prev + 1) % gradientClasses.length);
+      }, 30000);
+      
+      return () => clearInterval(interval);
+    }
+  }, [isLoading, gradientClasses.length]);
+  
+  // Apply current gradient
+  useEffect(() => {
+    if (!isLoading) {
+      document.body.className = gradientClasses[currentGradient];
+    }
+  }, [currentGradient, isLoading]);
 
   return (
-    <div className="min-h-screen bg-cyber-dark text-cyber-text overflow-x-hidden">
+    <div className="min-h-screen text-cyber-text overflow-x-hidden">
       {isLoading && <LoadingScreen />}
       <CustomCursor />
       <CodeAnimation />
