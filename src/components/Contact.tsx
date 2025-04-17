@@ -72,7 +72,7 @@ const Contact = () => {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
-      link: 'https://linkedin.com/in/harrishaj',
+      link: 'https://linkedin.com/in/harrishraj',
       color: 'hover:text-blue-400',
     },
     {
