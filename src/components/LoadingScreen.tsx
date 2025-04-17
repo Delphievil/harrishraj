@@ -68,7 +68,7 @@ const LoadingScreen = () => {
         <Lock size={24} className="text-cyber-secondary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
       </div>
       
-      <h1 className="text-3xl font-bold text-cyber-text mb-2">CyberSec Portfolio</h1>
+      <h1 className="text-3xl font-bold text-cyber-text mb-2">Harrish Raj Portfolio</h1>
       <p className="text-cyber-accent font-mono mb-8">Initializing Secure Environment</p>
       
       <div className="w-80 md:w-96 bg-cyber-dark rounded-lg overflow-hidden mb-4 border border-cyber-light/20">
