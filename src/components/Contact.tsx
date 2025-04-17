@@ -212,24 +212,19 @@ const Contact = () => {
 
               <div className="mb-4">
                 <label htmlFor="subject" className="block text-cyber-muted mb-2 text-sm">
-                  Subject
+                 Subject
                 </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formState.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 bg-cyber-darker border border-cyber-light/20 rounded-md focus:outline-none focus:ring-2 focus:ring-cyber-accent/50 text-cyber-text"
-                >
-                  <option value="">Select a subject</option>
-                  <option value="Security Assessment">Security Assessment</option>
-                  <option value="Penetration Testing">Penetration Testing</option>
-                  <option value="Security Consulting">Security Consulting</option>
-                  <option value="Incident Response">Incident Response</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
+                <input
+                   type="text"
+                   id="subject"
+                   name="subject"
+                   value={formState.subject}
+                   onChange={handleChange}
+                   required
+                   placeholder="Enter the subject"
+                   className="w-full px-4 py-2 bg-cyber-darker border border-cyber-light/20 rounded-md focus:outline-none focus:ring-2 focus:ring-cyber-accent/50 text-cyber-text"
+                    />
+               </div>
 
               <div className="mb-6">
                 <label htmlFor="message" className="block text-cyber-muted mb-2 text-sm">
