@@ -73,13 +73,13 @@ const Contact = () => {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: 'LinkedIn',
-      link: 'https://linkedin.com/in/',
+      link: 'https://linkedin.com/in/harrishaj',
       color: 'hover:text-blue-400',
     },
     {
       icon: <Twitter className="h-5 w-5" />,
       label: 'Twitter',
-      link: 'https://twitter.com/',
+      link: 'https://twitter.com/itsmeharrish',
       color: 'hover:text-blue-500',
     },
   ];
@@ -100,8 +100,7 @@ const Contact = () => {
             <span className="text-cyber-secondary">{'}'}</span>
           </h2>
           <p className="text-cyber-muted max-w-2xl mx-auto">
-            Interested in cybersecurity services or have a specific security challenge? 
-            I'm available for consultations, projects, and security assessments.
+            I am eager to contribute my skills and dedication to your organization, aiming to support its growth while continuing to grow personally and professionally
           </p>
         </div>
         
@@ -149,17 +148,16 @@ const Contact = () => {
             </div>
             
             <div className="p-6 border border-cyber-accent/20 bg-cyber-accent/5 rounded-lg">
-              <h3 className="text-cyber-text font-bold mb-2">Security Consultation</h3>
+              <h3 className="text-cyber-text font-bold mb-2">Its Great to see here</h3>
               <p className="text-cyber-muted mb-4">
-                Available for emergency incident response and security consultations 
-                with priority support for clients.
+                Get to know about my Experience and Knowledge
               </p>
               <a 
-                href="tel:+15551234567" 
+                href="mailto:aharrishraj1@gmail.com" 
                 className="inline-flex items-center text-cyber-accent hover:text-cyber-glow transition-colors"
               >
                 <Phone size={16} className="mr-2" />
-                Emergency Response Line
+                Contact for hire
               </a>
             </div>
           </div>
