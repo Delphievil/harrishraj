@@ -153,7 +153,7 @@ const Contact = () => {
                 download
                 className="inline-flex items-center px-4 py-2 bg-cyber-accent text-cyber-dark font-semibold rounded-md hover:bg-cyber-glow transition"
               >
-                📄 Harrishraj-sr.infosec-eng.pdf
+                📄 Harrishraj-sr.infosec-eng
               </a>
             </div>
 
@@ -167,7 +167,7 @@ const Contact = () => {
                 className="inline-flex items-center text-cyber-accent hover:text-cyber-glow transition-colors"
               >
                 <Phone size={16} className="mr-2" />
-                Contact for hire
+                Ping Me Up
               </a>
             </div>
           </div>
