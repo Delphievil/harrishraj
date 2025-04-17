@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import TypeWriter from './TypeWriter';
 
 const Hero = () => {
-  const titles = ['Senior Information Security Engineer', 'GRC Specialist', 'Cloud Security / Infromation security Professional', 'Cybersecurity Enthusiast'];
+  const titles = ['Senior Information Security Engineer', 'GRC Specialist', 'Cloud Security / Infomation security Professional', 'Cybersecurity Enthusiast'];
   
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
