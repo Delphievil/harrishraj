@@ -20,13 +20,13 @@ const Skills = () => {
       title: 'Compliance & Regulatory Frameworks',
       icon: <CheckCircle className="h-10 w-10 text-cyber-accent" />,
       description: 'Expert in GDPR, PCI DSS, HIPAA, ISO/IEC, DORA EU, NIST, CIS Controls, MITRE ATT&CK, and 40+ other regulations and frameworks.',
-      categories: ['compliance', 'offensive'],
+      categories: ['compliance'],
     },
     {
       title: 'Security Documentation & Risk Assessment',
       icon: <FileSearch className="h-10 w-10 text-cyber-secondary" />,
       description: 'Skilled in creating comprehensive security documentation and conducting thorough risk assessments.',
-      categories: ['defensive', 'compliance'],
+      categories: ['defensive'],
     },
     {
       title: 'Cloud Security',
@@ -37,8 +37,8 @@ const Skills = () => {
     {
       title: 'Vulnerability Assessment & Management',
       icon: <AlertTriangle className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Proficient in identifying, assessing, and managing security vulnerabilities across systems and applications.',
-      categories: ['defensive', 'offensive'],
+      description: 'Experience in identifying, assessing, and managing security vulnerabilities across systems and applications.',
+      categories: ['offensive'],
     },
     {
       title: 'Security Tools',
@@ -61,13 +61,13 @@ const Skills = () => {
     {
       title: 'Security Control Mapping & Benchmarking',
       icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Skilled in mapping security controls to standards and frameworks, establishing security benchmarks.',
-      categories: ['compliance', 'offensive'],
+      description: 'Expert in mapping security controls to standards and frameworks, establishing security benchmarks.',
+      categories: ['compliance'],
     },
     {
       title: 'Intrusion Detection & Prevention',
       icon: <Shield className="h-10 w-10 text-cyber-accent" />,
-      description: 'Expertise in implementing and managing Intrusion Detection and Prevention Systems (IDS/IPS).',
+      description: 'Experience in implementing and managing Intrusion Detection and Prevention Systems (IDS/IPS).',
       categories: ['defensive'],
     },
     {
@@ -80,13 +80,25 @@ const Skills = () => {
       title: 'OWASP TOP 10 & Security Standards',
       icon: <Bug className="h-10 w-10 text-cyber-accent" />,
       description: 'Deep knowledge of OWASP TOP 10, NIST, CIS framework, and benchmarks for application security.',
-      categories: ['offensive', 'defensive'],
+      categories: ['offensive'],
     },
     {
       title: 'Programming Skills',
       icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
-      description: 'Proficient in Python and C++ for security automation, tool development, and security testing.',
+      description: 'Intermediate Experience in Python and C++ .',
       categories: ['defensive'],
+    },
+    {
+      title: 'Security awareness & Training',
+      icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Designed and delivered targeted security awareness and training initiatives to enhance user vigilance, reduce risk exposure, and align employee behavior with organizational cybersecurity policies and standards',
+      categories: ['compliance'],
+    },
+    {
+      title: 'Threat Intelligence and threat analysis',
+      icon: <FileCode className="h-10 w-10 text-cyber-secondary" />,
+      description: 'Developing foundational skills in threat intelligence and threat analysis to identify indicators of compromise (IOCs), understand attacker tactics (TTPs), and support early-stage threat detection efforts',
+      categories: ['offensive'],
     },
   ];
   
