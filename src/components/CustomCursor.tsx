@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 
 const CustomCursor = () => {
@@ -61,11 +62,12 @@ const CustomCursor = () => {
           left: `${position.x}px`,
           top: `${position.y}px`,
           transform: 'translate(-50%, -50%)',
-          width: linkHovered ? '40px' : '20px',
-          height: linkHovered ? '40px' : '20px',
-          border: '2px solid #64FFDA',
+          width: linkHovered ? '50px' : '20px',
+          height: linkHovered ? '50px' : '20px',
+          border: '2px solid #FF3131', // Bright red border
           borderRadius: '50%',
-          transition: 'width 0.2s, height 0.2s, border 0.2s',
+          boxShadow: '0 0 15px rgba(255, 49, 49, 0.5)', // Glowing effect
+          transition: 'width 0.2s, height 0.2s, border 0.2s, box-shadow 0.2s',
         }}
       />
       <div
@@ -76,10 +78,11 @@ const CustomCursor = () => {
           left: `${position.x}px`,
           top: `${position.y}px`,
           transform: 'translate(-50%, -50%)',
-          width: '4px',
-          height: '4px',
-          backgroundColor: '#64FFDA',
+          width: '6px',
+          height: '6px',
+          backgroundColor: '#FF3131', // Bright red dot
           borderRadius: '50%',
+          boxShadow: '0 0 10px rgba(255, 49, 49, 0.7)', // Subtle glow
           transition: 'opacity 0.2s'
         }}
       />
