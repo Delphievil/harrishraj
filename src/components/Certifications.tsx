@@ -1,5 +1,12 @@
-
-import { Award, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink, Upload } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 const Certifications = () => {
   const certifications = [
@@ -7,11 +14,15 @@ const Certifications = () => {
       title: 'Professional Cloud Security Engineer',
       issuer: 'Google Cloud',
       status: 'Certified',
+      link: '',
+      description: 'Professional Cloud Security Engineer certification from Google Cloud Platform'
     },
     {
       title: 'Cloud Cybersecurity Certificate',
       issuer: 'Google Cloud',
       status: 'Certified',
+      link: '',
+      description: 'Cloud Security specialization covering GCP security best practices'
     },
     {
       title: 'Certified Cyber Threat Intelligence Analyst (CCTIA)',
@@ -100,25 +111,65 @@ const Certifications = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, index) => (
-            <div 
-              key={index}
-              className="p-6 bg-cyber-darker rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all group"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-cyber-accent/10 rounded-full group-hover:bg-cyber-accent/20 transition-colors">
-                  <Award className="h-6 w-6 text-cyber-accent" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-medium text-cyber-text group-hover:text-cyber-accent transition-colors">
-                    {cert.title}
-                  </h3>
-                  <div className="flex items-center justify-between mt-2">
-                    <span className="text-cyber-muted text-sm">{cert.issuer}</span>
-                    <span className="text-cyber-accent text-sm">{cert.status}</span>
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <div className="p-6 bg-cyber-darker rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all group cursor-pointer">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 bg-cyber-accent/10 rounded-full group-hover:bg-cyber-accent/20 transition-colors">
+                      <Award className="h-6 w-6 text-cyber-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-medium text-cyber-text group-hover:text-cyber-accent transition-colors">
+                        {cert.title}
+                      </h3>
+                      <div className="flex items-center justify-between mt-2">
+                        <span className="text-cyber-muted text-sm">{cert.issuer}</span>
+                        <span className="text-cyber-accent text-sm">{cert.status}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </DialogTrigger>
+              <DialogContent className="bg-cyber-darker border border-cyber-light/20 text-cyber-text">
+                <DialogHeader>
+                  <DialogTitle className="text-xl font-bold text-cyber-accent">
+                    {cert.title}
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-medium text-cyber-muted mb-1">Issuer</h4>
+                    <p className="text-cyber-text">{cert.issuer}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium text-cyber-muted mb-1">Status</h4>
+                    <p className="text-cyber-text">{cert.status}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium text-cyber-muted mb-1">Description</h4>
+                    <p className="text-cyber-text">{cert.description}</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="flex items-center gap-2"
+                      onClick={() => window.open(cert.link, '_blank')}
+                      disabled={!cert.link}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      View Certificate
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="flex items-center gap-2"
+                    >
+                      <Upload className="h-4 w-4" />
+                      Upload Certificate
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
       </div>

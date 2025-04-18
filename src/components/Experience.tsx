@@ -1,6 +1,12 @@
-
 import { useState } from 'react';
-import { Calendar, ArrowRight, Shield, Briefcase, GraduationCap, Award } from 'lucide-react';
+import { Calendar, ArrowRight, Shield, Briefcase, GraduationCap, Award, Bot, Code } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState('work');
@@ -92,81 +98,41 @@ const Experience = () => {
     }
   ];
   
-  const certifications = [
+  const projects = [
     {
-      title: 'Professional Cloud Security Engineer',
-      issuer: 'Google Cloud',
-      date: 'Certified',
-      icon: <Award className="h-5 w-5" />,
+      title: 'Shayera AI - A Virtual Assistant for PC',
+      type: 'AI Development',
+      description: 'Created a voice-controlled virtual assistant for computers using artificial intelligence.',
+      achievements: [
+        'As a Team of Three Members, We had Create an Actual Virtual Assistant to all supported Computers',
+        'I\'m the Team Lead of this Project, Helping Team-Mates to develop the code in our own way of exposure',
+        'This Virtual Assistant can be controlled by voice. As this Assistant using Artificial Intelligence to Recognize the user\'s Voice and Respond',
+        'This Project is an initial Start to provide an example of my futuristic Model of Shayera - AI'
+      ],
+      icon: <Bot className="h-5 w-5" />,
     },
     {
-      title: 'Cloud Cybersecurity Certificate',
-      issuer: 'Google Cloud',
-      date: 'Certified',
-      icon: <Award className="h-5 w-5" />,
+      title: 'Neural Network from Scratch in TensorFlow',
+      type: 'Machine Learning',
+      description: 'Guided Project through Coursera',
+      achievements: [
+        'How to implement a neural network from scratch using TensorFlow',
+        'How to solve a multi-class classification problem using the neural network implementation'
+      ],
+      icon: <Code className="h-5 w-5" />,
     },
     {
-      title: 'Certified Cyber Threat Intelligence Analyst (CCTIA)',
-      issuer: 'Cyber Training 365',
-      date: 'Certified',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'ISO/IEC 27001 Information Security Associate',
-      issuer: 'SkillFront',
-      date: 'Associate',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'Third Party Risk Management (CTPRME)',
-      issuer: 'Security Scorecard',
-      date: 'Certified',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'IBM Cyber Security Analyst',
-      issuer: 'IBM',
-      date: 'Certified',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'Google IT Support Specialist',
-      issuer: 'Google & Coursera',
-      date: 'Specialist',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'Ransomware Uncovered',
-      issuer: 'ICTTF - Cyber Risk Academy',
-      date: 'Specialist',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'SASE Expert',
-      issuer: 'CATO Network',
-      date: 'Level 1 & 2',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'Cyber Samurai Program in Cyber Defence',
-      issuer: 'IIT Jodhpur (TISC)',
-      date: 'Entry-Level',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'Google Cyber Security Specialization',
-      issuer: 'Google & Coursera',
-      date: 'Specialist',
-      icon: <Award className="h-5 w-5" />,
-    },
-    {
-      title: 'Palo Alto Cyber Security Networks Professional',
-      issuer: 'Palo Alto & Coursera',
-      date: 'Professional',
-      icon: <Award className="h-5 w-5" />,
+      title: 'Exposing Vulnerable IP Camera around the Globe',
+      type: 'Security Research',
+      description: 'Vulnerable Camera Exposure - Mini Project',
+      achievements: [
+        'A Team of Four Members who had experimented the way to find Vulnerable IP Camera around the Globe with Limited Access',
+        'I\'m the Lead of this Mini - Project Team where conducted and organised by College Research Development Department'
+      ],
+      icon: <Shield className="h-5 w-5" />,
     }
   ];
-  
+
   return (
     <section id="experience" className="py-20 relative">
       {/* Background Elements */}
@@ -215,14 +181,14 @@ const Experience = () => {
           </button>
           <button
             className={`px-6 py-3 font-medium transition-all relative ${
-              activeTab === 'certifications' 
+              activeTab === 'projects' 
                 ? 'text-cyber-accent' 
                 : 'text-cyber-muted hover:text-cyber-text'
             }`}
-            onClick={() => setActiveTab('certifications')}
+            onClick={() => setActiveTab('projects')}
           >
-            Certifications
-            {activeTab === 'certifications' && (
+            Projects
+            {activeTab === 'projects' && (
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyber-accent"></span>
             )}
           </button>
@@ -295,25 +261,34 @@ const Experience = () => {
             ))}
           </div>
         )}
-        
-        {/* Certifications */}
-        {activeTab === 'certifications' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {certifications.map((cert, index) => (
+
+        {/* Projects */}
+        {activeTab === 'projects' && (
+          <div className="space-y-6">
+            {projects.map((project, index) => (
               <div 
                 key={index} 
-                className="p-5 bg-cyber-darker rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all flex items-start"
+                className="p-6 bg-cyber-darker rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all"
               >
-                <div className="mr-4 p-3 bg-cyber-accent/10 rounded-full">
-                  {cert.icon}
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-cyber-text">{cert.title}</h3>
-                  <div className="flex items-center justify-between mt-1">
-                    <span className="text-cyber-accent text-sm">{cert.issuer}</span>
-                    <span className="text-cyber-muted text-sm">{cert.date}</span>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-cyber-accent/10 rounded-full">
+                    {project.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-cyber-text">{project.title}</h3>
+                    <span className="text-cyber-accent text-sm">{project.type}</span>
                   </div>
                 </div>
+                <p className="text-cyber-muted mb-4">{project.description}</p>
+                <h4 className="text-cyber-text font-medium mb-2">Key Achievements:</h4>
+                <ul className="space-y-2">
+                  {project.achievements.map((achievement, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <ArrowRight size={16} className="text-cyber-secondary mr-2 mt-1 shrink-0" />
+                      <span className="text-cyber-muted">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
