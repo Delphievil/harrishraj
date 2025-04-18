@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Upload } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -113,7 +113,7 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
-                <div className="p-6 bg-cyber-darker rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all group cursor-pointer">
+                <div className="p-6 bg-cyber-darker/80 backdrop-blur-sm rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all group cursor-pointer hover:transform hover:scale-105">
                   <div className="flex items-start space-x-4">
                     <div className="p-3 bg-cyber-accent/10 rounded-full group-hover:bg-cyber-accent/20 transition-colors">
                       <Award className="h-6 w-6 text-cyber-accent" />
@@ -130,7 +130,7 @@ const Certifications = () => {
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="bg-cyber-darker border border-cyber-light/20 text-cyber-text">
+              <DialogContent className="bg-cyber-darker/95 backdrop-blur-md border border-cyber-light/20 text-cyber-text">
                 <DialogHeader>
                   <DialogTitle className="text-xl font-bold text-cyber-accent">
                     {cert.title}
@@ -158,13 +158,6 @@ const Certifications = () => {
                     >
                       <ExternalLink className="h-4 w-4" />
                       View Certificate
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="flex items-center gap-2"
-                    >
-                      <Upload className="h-4 w-4" />
-                      Upload Certificate
                     </Button>
                   </div>
                 </div>

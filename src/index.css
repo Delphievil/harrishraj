@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,15 +50,27 @@
     color: #e6f1ff;
     font-family: 'Fira Code', monospace;
     cursor: none;
-    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image: 
+      linear-gradient(125deg, rgba(10, 25, 47, 0.95) 0%, 
+        rgba(37, 47, 69, 0.95) 50%,
+        rgba(82, 99, 149, 0.90) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     position: relative;
   }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   
-  /* Add overlay to make background images darker */
   body::before {
     content: "";
     position: fixed;
@@ -67,10 +78,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 25, 47, 0.85);
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.05) 0%, transparent 40%);
+    pointer-events: none;
     z-index: -1;
   }
-  
+
   a, button {
     cursor: none;
   }
