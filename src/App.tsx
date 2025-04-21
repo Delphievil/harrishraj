@@ -1,27 +1,34 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import React, { useState } from "react";
+import DynamicSecurityBg from "./DynamicSecurityBg";
 
-const queryClient = new QueryClient();
+const App = () => {
+  const [isDark, setIsDark] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [threatDetected, setThreatDetected] = useState(false);
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  return (
+    <>
+      <DynamicSecurityBg
+        theme={isDark ? "dark" : "light"}
+        isAuthenticated={isAuthenticated}
+        threatDetected={threatDetected}
+      />
+
+      <div className="relative z-10 p-8 text-white">
+        <h1 className="text-3xl font-bold">Cybersecurity Dashboard</h1>
+        <div className="mt-4 space-x-4">
+          <button onClick={() => setIsDark(!isDark)}>Toggle Theme</button>
+          <button onClick={() => setIsAuthenticated(!isAuthenticated)}>
+            Toggle Auth
+          </button>
+          <button onClick={() => setThreatDetected(!threatDetected)}>
+            Toggle Threat
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default App;
+
