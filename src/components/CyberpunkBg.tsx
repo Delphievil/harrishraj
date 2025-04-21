@@ -1,98 +1,52 @@
-import { useRef, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "./CyberpunkBg.css";
 
-const DynamicHackerBg = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+const CyberpunkBg: React.FC = () => {
+  const [matrix, setMatrix] = useState<string[]>([]);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    const createMatrixEffect = () => {
+      const columns = Math.floor(window.innerWidth / 20);
+      const rows = Math.floor(window.innerHeight / 20);
+      const newMatrix: string[] = Array(columns).fill("");
 
-    let width = window.innerWidth;
-    let height = window.innerHeight;
+      setMatrix(newMatrix);
 
-    const resizeCanvas = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
+      const intervalId = setInterval(() => {
+        setMatrix((prevMatrix) =>
+          prevMatrix.map((column, index) => {
+            const newColumn =
+              column +
+              String.fromCharCode(
+                0x30a0 + Math.floor(Math.random() * 96) // Random Katakana characters
+              );
+            return newColumn.slice(-rows); // Trim to fit screen
+          })
+        );
+      }, 100);
+
+      return () => clearInterval(intervalId);
     };
 
-    const drawDynamicBackground = () => {
-      // Set a gradient hacker-themed background
-      const gradient = ctx.createLinearGradient(0, 0, width, height);
-      gradient.addColorStop(0, "#0f2027");
-      gradient.addColorStop(0.5, "#203a43");
-      gradient.addColorStop(1, "#2c5364");
+    createMatrixEffect();
+    window.addEventListener("resize", createMatrixEffect);
 
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
-
-      // Add dynamic glowing particles
-      const particles = Array.from({ length: 100 }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: Math.random() * 3 + 1,
-        dx: (Math.random() - 0.5) * 2,
-        dy: (Math.random() - 0.5) * 2,
-      }));
-
-      const animateParticles = () => {
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
-
-        particles.forEach((particle) => {
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.radius, 0, 2 * Math.PI);
-          ctx.fillStyle = "rgba(0, 255, 0, 0.8)";
-          ctx.shadowColor = "rgba(0, 255, 0, 0.5)";
-          ctx.shadowBlur = 10;
-          ctx.fill();
-
-          // Update particle position
-          particle.x += particle.dx;
-          particle.y += particle.dy;
-
-          // Wrap particles around the screen
-          if (particle.x < 0) particle.x = width;
-          if (particle.x > width) particle.x = 0;
-          if (particle.y < 0) particle.y = height;
-          if (particle.y > height) particle.y = 0;
-        });
-
-        requestAnimationFrame(animateParticles);
-      };
-
-      animateParticles();
-    };
-
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    drawDynamicBackground();
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas);
-    };
+    return () => window.removeEventListener("resize", createMatrixEffect);
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: -1,
-        pointerEvents: "none",
-      }}
-    />
+    <div className="cyberpunk-bg">
+      {matrix.map((column, index) => (
+        <div key={index} className="matrix-column">
+          {column.split("").map((char, charIndex) => (
+            <span key={charIndex} className="matrix-char">
+              {char}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
   );
 };
 
-export default DynamicHackerBg;
+export default CyberpunkBg;
