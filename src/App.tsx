@@ -1,21 +1,41 @@
-import React from "react";
-import DynamicSecurity from "./components/DynamicSecurity"; // make sure path is correct
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import DynamicSecurity from "./components/DynamicSecurity"; // Adjust the path if necessary
+import LoadingScreen from "./components/LoadingScreen"; // Adjust the path
 
-function App() {
+const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading screen for 3 seconds (adjust as necessary)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <>
-      <DynamicSecurity
-        theme="dark"
-        isAuthenticated={true}
-        threatDetected={true}
-      />
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-white">
-        <h1 className="text-5xl font-bold mb-4">Harrish Raj's Cyber UI</h1>
-        <p className="text-lg">This interface now features a custom security-themed background.</p>
+    <Router>
+      <div className="App">
+        {/* Show loading screen before loading other components */}
+        {loading ? (
+          <LoadingScreen />
+        ) : (
+          <>
+            {/* Conditionally render the security background after loading */}
+            <DynamicSecurity theme="dark" isAuthenticated={true} threatDetected={false} />
+            {/* Your main page content */}
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/other" component={OtherPage} />
+            </Switch>
+          </>
+        )}
       </div>
-    </>
+    </Router>
   );
-}
+};
 
 export default App;
 
