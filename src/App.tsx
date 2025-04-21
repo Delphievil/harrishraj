@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DynamicSecurityBg from "./components/DynamicSecurity"; // Ensure path is correct
+import DynamicSecurityBg from "./components/DynamicSecuritybg"; // Ensure path is correct
 import LoadingScreen from "./components/LoadingScreen"; // Ensure path is correct
 
 const App = () => {
