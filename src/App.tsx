@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DynamicSecurityBg from "./DynamicSecurityBg";
+import DynamicSecurityBg from "./components/DynamicSecurityBg";
 
 const App = () => {
   const [isDark, setIsDark] = useState(true);
