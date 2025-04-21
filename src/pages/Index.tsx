@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -7,8 +6,8 @@ import Certifications from "../components/Certifications";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import CodeAnimation from "../components/CodeAnimation";
 import CustomCursor from "../components/CustomCursor";
+import CyberpunkBg from "../components/CyberpunkBg";
 import LoadingScreen from "../components/LoadingScreen";
 
 const Index = () => {
@@ -23,11 +22,9 @@ const Index = () => {
     "gradient-cyber-5"
   ];
 
-  // Set document title and handle loading
   useEffect(() => {
     document.title = "A. Harrish Raj | Senior Information Security Engineer";
     
-    // Simulate loading delay
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 6000);
@@ -35,7 +32,6 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Cycle through gradients every 30 seconds
   useEffect(() => {
     if (!isLoading) {
       const interval = setInterval(() => {
@@ -46,18 +42,17 @@ const Index = () => {
     }
   }, [isLoading, gradientClasses.length]);
   
-  // Apply current gradient
   useEffect(() => {
     if (!isLoading) {
-      document.body.className = gradientClasses[currentGradient];
+      document.body.className = "bg-black";
     }
   }, [currentGradient, isLoading]);
 
   return (
-    <div className="min-h-screen text-cyber-text overflow-x-hidden">
+    <div className="min-h-screen text-cyber-text overflow-x-hidden bg-black">
       {isLoading && <LoadingScreen />}
+      <CyberpunkBg />
       <CustomCursor />
-      <CodeAnimation />
       <Navbar />
       <Hero />
       <Skills />

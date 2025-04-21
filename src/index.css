@@ -1,95 +1,63 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 217 35% 12%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 5%;
+    --foreground: 0 100% 97%;
 
-    --card: 217 35% 16%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 4% 12%;
+    --card-foreground: 0 100% 97%;
 
-    --popover: 217 35% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 5% 7%;
+    --popover-foreground: 0 100% 97%;
 
-    --primary: 171 68% 71%;
-    --primary-foreground: 217 35% 12%;
+    --primary: 350 98% 59%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 199 89% 48%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 333 89% 55%;
+    --secondary-foreground: 0 100% 97%;
 
-    --muted: 217 35% 20%;
-    --muted-foreground: 215 20% 70%;
+    --muted: 250 8% 14%;
+    --muted-foreground: 348 84% 61%;
 
-    --accent: 171 68% 71%;
-    --accent-foreground: 217 35% 12%;
+    --accent: 350 98% 59%;
+    --accent-foreground: 348 84% 61%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 35% 24%;
-    --input: 217 35% 24%;
-    --ring: 171 68% 71%;
+    --border: 350 91% 36%;
+    --input: 350 91% 36%;
+    --ring: 350 98% 59%;
 
-    --radius: 0.5rem;
+    --radius: 0.6rem;
 
-    --sidebar-background: 217 35% 12%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 171 68% 71%;
-    --sidebar-primary-foreground: 217 35% 12%;
-    --sidebar-accent: 217 35% 20%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 35% 24%;
-    --sidebar-ring: 171 68% 71%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 100% 97%;
+    --sidebar-primary: 350 98% 59%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 344 78% 24%;
+    --sidebar-accent-foreground: 0 100% 97%;
+    --sidebar-border: 340 20% 18%;
+    --sidebar-ring: 350 98% 59%;
   }
-  
-  /* Always use dark theme for cybersecurity portfolio */
+
+  /* Always use cyberpunk dark theme for portfolio */
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-[#fffafc];
     font-family: 'Fira Code', monospace;
     cursor: none;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
   }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(135deg, 
-        rgba(20, 10, 30, 0.97) 0%, 
-        rgba(40, 10, 20, 0.95) 100%);
-    z-index: -2;
-  }
-
+  /* Remove legacy layered backgrounds */
+  body::before,
   body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      repeating-linear-gradient(
-        0deg,
-        rgba(255, 49, 49, 0.03) 0px,
-        rgba(255, 49, 49, 0.03) 1px,
-        transparent 1px,
-        transparent 2px
-      ),
-      radial-gradient(
-        circle at 50% 50%,
-        rgba(255, 49, 49, 0.05) 0%,
-        transparent 50%
-      );
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.5;
+    display: none !important;
   }
 
   a, button {
@@ -101,56 +69,7 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
-  }
-}
-
-/* Background image variations - will switch using JS */
-.bg-cyber-1 {
-  background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') !important;
-}
-
-.bg-cyber-2 {
-  background-image: url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') !important;
-}
-
-.bg-cyber-3 {
-  background-image: url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') !important;
-}
-
-/* Gradient background variations */
-.gradient-cyber-1 {
-  background-image: linear-gradient(135deg, #0A192F 0%, #243949 50%, #517fa4 100%) !important;
-}
-
-.gradient-cyber-2 {
-  background-image: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%) !important;
-}
-
-.gradient-cyber-3 {
-  background-image: linear-gradient(to right, #434343 0%, #000000 100%) !important;
-}
-
-.gradient-cyber-4 {
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%) !important;
-}
-
-.gradient-cyber-5 {
-  background-image: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%) !important;
-}
-
-.gradient-cyber-matrix {
-  background-image: radial-gradient(circle, #0f0, #000) !important;
-  animation: pulse 10s infinite alternate;
-}
-
-@keyframes pulse {
-  0% {
-    background-size: 100% 100%;
-  }
-  100% {
-    background-size: 120% 120%;
+    @apply bg-black text-[#ffdde1];
   }
 }
