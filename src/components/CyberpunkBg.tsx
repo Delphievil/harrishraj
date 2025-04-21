@@ -1,13 +1,6 @@
 import { useRef, useEffect } from "react";
 
-// Util for a random Katakana/Hiragana/ASCII character
-function getMatrixChar() {
-  const chars =
-    "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  return chars[Math.floor(Math.random() * chars.length)];
-}
-
-const MatrixBg = () => {
+const DynamicHackerBg = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -19,65 +12,66 @@ const MatrixBg = () => {
     let width = window.innerWidth;
     let height = window.innerHeight;
 
-    // Setting up matrix columns
-    let fontSize = 20;
-    let columns = Math.floor(width / fontSize);
-    let drops = new Array(columns).fill(1);
-
     const resizeCanvas = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
-      columns = Math.floor(width / fontSize);
-      drops = new Array(columns).fill(1);
+    };
+
+    const drawDynamicBackground = () => {
+      // Set a gradient hacker-themed background
+      const gradient = ctx.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, "#0f2027");
+      gradient.addColorStop(0.5, "#203a43");
+      gradient.addColorStop(1, "#2c5364");
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+
+      // Add dynamic glowing particles
+      const particles = Array.from({ length: 100 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 3 + 1,
+        dx: (Math.random() - 0.5) * 2,
+        dy: (Math.random() - 0.5) * 2,
+      }));
+
+      const animateParticles = () => {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+
+        particles.forEach((particle) => {
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = "rgba(0, 255, 0, 0.8)";
+          ctx.shadowColor = "rgba(0, 255, 0, 0.5)";
+          ctx.shadowBlur = 10;
+          ctx.fill();
+
+          // Update particle position
+          particle.x += particle.dx;
+          particle.y += particle.dy;
+
+          // Wrap particles around the screen
+          if (particle.x < 0) particle.x = width;
+          if (particle.x > width) particle.x = 0;
+          if (particle.y < 0) particle.y = height;
+          if (particle.y > height) particle.y = 0;
+        });
+
+        requestAnimationFrame(animateParticles);
+      };
+
+      animateParticles();
     };
 
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    function draw() {
-      // Black transparent bg to gently fade trails
-      ctx.fillStyle = "rgba(10, 24, 35, 0.68)";
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.font = fontSize + "px 'Fira Code', monospace";
-      ctx.textAlign = "center";
-      for (let i = 0; i < columns; i++) {
-        // Adding glitch effect with random color and size
-        ctx.shadowColor = "#33C3F0";
-        ctx.shadowBlur = 14;
-
-        ctx.fillStyle = Math.random() > 0.9 ? "#0ff" : "#33C3F0";
-        const text = getMatrixChar();
-        ctx.fillText(
-          text,
-          i * fontSize + fontSize / 2,
-          drops[i] * fontSize
-        );
-
-        if (drops[i] * fontSize > height && Math.random() > 0.98) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-
-      // Adding a glitch overlay
-      ctx.globalCompositeOperation = "lighter";
-      ctx.fillStyle = "rgba(255, 0, 255, 0.05)";
-      ctx.fillRect(
-        Math.random() * width,
-        Math.random() * height,
-        Math.random() * 100,
-        Math.random() * 100
-      );
-      ctx.globalCompositeOperation = "source-over";
-
-      ctx.shadowBlur = 0;
-      requestAnimationFrame(draw);
-    }
-
-    draw();
+    drawDynamicBackground();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
@@ -96,10 +90,9 @@ const MatrixBg = () => {
         height: "100vh",
         zIndex: -1,
         pointerEvents: "none",
-        background: "linear-gradient(180deg, #000000 40%, #0EAEDB 100%)",
       }}
     />
   );
 };
 
-export default MatrixBg;
+export default DynamicHackerBg;
