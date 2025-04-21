@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DynamicSecurityBg from "./components/DynamicSecurity";
+import DynamicSecurity from "./components/DynamicSecurity";
 
 const App = () => {
   const [isDark, setIsDark] = useState(true);
@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <>
-      <DynamicSecurityBg
+      <DynamicSecurity
         theme={isDark ? "dark" : "light"}
         isAuthenticated={isAuthenticated}
         threatDetected={threatDetected}
@@ -31,4 +31,3 @@ const App = () => {
 };
 
 export default App;
-
