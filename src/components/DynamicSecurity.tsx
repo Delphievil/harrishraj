@@ -57,6 +57,9 @@ const DynamicSecurityBg: React.FC<DynamicSecurityBgProps> = ({
     };
 
     const draw = () => {
+      // Clear the canvas to make it transparent before drawing a new frame
+      ctx.clearRect(0, 0, width, height);
+
       // Background gradient
       const gradient = ctx.createLinearGradient(0, offset, width, height + offset);
 
@@ -119,8 +122,8 @@ const DynamicSecurityBg: React.FC<DynamicSecurityBgProps> = ({
         left: 0,
         width: "100vw",
         height: "100vh",
-        zIndex: -1,
-        pointerEvents: "none",
+        zIndex: -1, // Make sure the canvas is behind other content
+        pointerEvents: "none", // Allow interaction with other elements in front of the canvas
       }}
     />
   );
