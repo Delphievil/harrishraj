@@ -74,6 +74,17 @@ const CyberpunkBg = () => {
       ctx.lineTo(width, pulseY);
       ctx.stroke();
 
+      // Add a few random glitching effects
+      if (Math.random() > 0.97) {
+        const glitchX = Math.random() * width;
+        const glitchY = Math.random() * height;
+        const glitchW = Math.random() * 100 + 50;
+        const glitchH = Math.random() * 5 + 2;
+        
+        ctx.fillStyle = "rgba(234, 56, 76, 0.7)";
+        ctx.fillRect(glitchX, glitchY, glitchW, glitchH);
+      }
+
       offset += 0.8;
 
       animationFrameId = requestAnimationFrame(draw);
@@ -90,8 +101,17 @@ const CyberpunkBg = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
-      style={{ backgroundColor: "#000000", position: "fixed", zIndex: -10 }}
+      className="fixed top-0 left-0 w-full h-full"
+      style={{ 
+        position: "fixed", 
+        top: 0, 
+        left: 0, 
+        width: "100vw", 
+        height: "100vh", 
+        zIndex: -1, 
+        pointerEvents: "none",
+        backgroundColor: "#000000" 
+      }}
     />
   );
 };

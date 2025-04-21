@@ -36,7 +36,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-cyber-text overflow-x-hidden bg-black relative">
+    <div className="min-h-screen text-cyber-text overflow-x-hidden relative">
       {isLoading && <LoadingScreen />}
       <CyberpunkBg />
       <CustomCursor />
