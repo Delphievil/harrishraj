@@ -1,41 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DynamicSecurity from "./components/DynamicSecurity"; // Adjust the path if necessary
-import LoadingScreen from "./components/LoadingScreen"; // Adjust the path
+import DynamicSecurityBg from "./components/DynamicSecurity"; // Ensure path is correct
+import LoadingScreen from "./components/LoadingScreen"; // Ensure path is correct
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
-  // Simulate loading screen for 3 seconds (adjust as necessary)
+  // Simulate loading screen for 3 seconds (adjust time as necessary)
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // 3 seconds
+    }, 3000); // 3 seconds for the loading screen
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <Router>
-      <div className="App">
-        {/* Show loading screen before loading other components */}
-        {loading ? (
-          <LoadingScreen />
-        ) : (
-          <>
-            {/* Conditionally render the security background after loading */}
-            <DynamicSecurity theme="dark" isAuthenticated={true} threatDetected={false} />
-            {/* Your main page content */}
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/other" component={OtherPage} />
-            </Switch>
-          </>
-        )}
-      </div>
-    </Router>
+    <div className="App">
+      {/* Show loading screen while loading */}
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          {/* After loading, render DynamicSecurityBg */}
+          <DynamicSecurity theme="dark" isAuthenticated={true} threatDetected={false} />
+          {/* Main content here */}
+          <div>
+            <h1 className="text-white">Welcome to the Security-Themed App!</h1>
+          </div>
+        </>
+      )}
+    </div>
   );
 };
 
 export default App;
-
