@@ -1,16 +1,12 @@
 import { useState } from 'react';
-import { Calendar, ArrowRight, Shield, Briefcase, GraduationCap, Award, Bot, Code } from 'lucide-react';
+import { Calendar, ArrowRight, GraduationCap, Briefcase, Shield, Bot, Code } from 'lucide-react';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger,
 } from "@/components/ui/dialog";
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState('work');
-  
+
   const workExperience = [
     {
       title: 'Senior Information Security Engineer',
@@ -61,7 +57,7 @@ const Experience = () => {
       icon: <Briefcase className="h-5 w-5" />,
     }
   ];
-  
+
   const education = [
     {
       degree: 'Bachelor of Engineering, Computer Science & Engineering',
@@ -97,7 +93,7 @@ const Experience = () => {
       icon: <GraduationCap className="h-5 w-5" />,
     }
   ];
-  
+
   const projects = [
     {
       title: 'Shayera AI - A Virtual Assistant for PC',
@@ -135,11 +131,10 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-20 relative">
-      {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-0 top-1/4 w-96 h-96 bg-cyber-secondary/10 blur-[100px] rounded-full opacity-30"></div>
       </div>
-      
+
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-cyber-text mb-4">
@@ -150,8 +145,7 @@ const Experience = () => {
             education, and industry certifications.
           </p>
         </div>
-        
-        {/* Tab Navigation */}
+
         <div className="flex justify-center mb-10 border-b border-cyber-light/10">
           <button
             className={`px-6 py-3 font-medium transition-all relative ${
@@ -193,8 +187,7 @@ const Experience = () => {
             )}
           </button>
         </div>
-        
-        {/* Work Experience */}
+
         {activeTab === 'work' && (
           <div className="space-y-6">
             {workExperience.map((job, index) => (
@@ -227,42 +220,47 @@ const Experience = () => {
             ))}
           </div>
         )}
-        
-        {/* Education */}
+
         {activeTab === 'education' && (
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <div 
-                key={index} 
-                className="p-6 bg-cyber-darker rounded-lg border border-cyber-light/10 hover:border-cyber-accent/30 transition-all"
-              >
-                <div className="flex justify-between mb-2">
-                  <h3 className="text-xl font-bold text-cyber-text">{edu.degree}</h3>
-                  <span className="text-cyber-muted flex items-center text-sm">
-                    <Calendar size={14} className="mr-1" />
-                    {edu.period}
-                  </span>
-                </div>
-                <div className="flex items-center text-cyber-accent mb-4">
-                  {edu.icon}
-                  <span className="ml-2">{edu.institution}</span>
-                </div>
-                <p className="text-cyber-muted mb-4">{edu.description}</p>
-                <h4 className="text-cyber-text font-medium mb-2">Achievements:</h4>
-                <ul className="space-y-2">
-                  {edu.achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <ArrowRight size={16} className="text-cyber-secondary mr-2 mt-1 shrink-0" />
-                      <span className="text-cyber-muted">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="relative max-w-2xl mx-auto pt-2 pb-4">
+            <div className="absolute left-4 md:left-8 top-8 bottom-2 w-1 bg-gradient-to-b from-cyan-400/50 to-cyan-900/20 rounded-full z-0" />
+            <ul className="relative z-10 space-y-12">
+              {education.map((edu, idx) => (
+                <li key={idx} className="relative flex items-start">
+                  <div className="flex flex-col items-center mr-6 md:mr-12">
+                    <span className="block w-5 h-5 rounded-full bg-cyan-400 border-4 border-cyan-800 shadow-md relative z-10 animate-pulse" />
+                    {idx < education.length - 1 && (
+                      <span className="flex-1 w-1 bg-gradient-to-b from-cyan-400/80 to-cyan-900/20 min-h-10" />
+                    )}
+                  </div>
+                  <div className="bg-black bg-opacity-60 border border-cyan-800 shadow-lg rounded-lg px-6 py-5 w-full hover:scale-[1.02] transition-transform duration-200">
+                    <div className="flex justify-between items-center mb-1">
+                      <h3 className="text-lg md:text-xl font-bold text-cyan-300">{edu.degree}</h3>
+                      <span className="text-cyan-500 flex items-center text-xs md:text-sm">
+                        <Calendar size={13} className="mr-1" />
+                        {edu.period}
+                      </span>
+                    </div>
+                    <div className="flex items-center text-cyan-200 mb-2">
+                      <span className="mr-2">{edu.icon}</span>
+                      <span className="ml-1">{edu.institution}</span>
+                    </div>
+                    <p className="text-cyan-500 mb-1 text-sm">{edu.description}</p>
+                    <div>
+                      <h4 className="text-cyan-300 font-medium mb-1 text-sm">Achievements:</h4>
+                      <ul className="space-y-1 list-disc list-inside">
+                        {edu.achievements.map((achievement, aidx) => (
+                          <li key={aidx} className="text-cyan-400 text-xs">{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 
-        {/* Projects */}
         {activeTab === 'projects' && (
           <div className="space-y-6">
             {projects.map((project, index) => (
