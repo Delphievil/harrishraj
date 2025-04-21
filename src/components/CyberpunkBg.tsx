@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from "react";
 
 // Util for a random Katakana/Hiragana/ASCII character
@@ -45,15 +44,11 @@ const MatrixBg = () => {
       ctx.font = fontSize + "px 'Fira Code', monospace";
       ctx.textAlign = "center";
       for (let i = 0; i < columns; i++) {
-        // Cyan/teal glow
+        // Adding glitch effect with random color and size
         ctx.shadowColor = "#33C3F0";
         ctx.shadowBlur = 14;
-        ctx.fillStyle =
-          Math.random() > 0.88
-            ? "#0ff"
-            : Math.random() > 0.85
-            ? "#33C3F0"
-            : "#1EAEDB";
+
+        ctx.fillStyle = Math.random() > 0.9 ? "#0ff" : "#33C3F0";
         const text = getMatrixChar();
         ctx.fillText(
           text,
@@ -61,14 +56,22 @@ const MatrixBg = () => {
           drops[i] * fontSize
         );
 
-        if (
-          drops[i] * fontSize > height &&
-          Math.random() > 0.98
-        ) {
+        if (drops[i] * fontSize > height && Math.random() > 0.98) {
           drops[i] = 0;
         }
         drops[i]++;
       }
+
+      // Adding a glitch overlay
+      ctx.globalCompositeOperation = "lighter";
+      ctx.fillStyle = "rgba(255, 0, 255, 0.05)";
+      ctx.fillRect(
+        Math.random() * width,
+        Math.random() * height,
+        Math.random() * 100,
+        Math.random() * 100
+      );
+      ctx.globalCompositeOperation = "source-over";
 
       ctx.shadowBlur = 0;
       requestAnimationFrame(draw);
@@ -93,7 +96,7 @@ const MatrixBg = () => {
         height: "100vh",
         zIndex: -1,
         pointerEvents: "none",
-        background: "linear-gradient(180deg, #18315A 60%, #0EAEDB 100%)"
+        background: "linear-gradient(180deg, #000000 40%, #0EAEDB 100%)",
       }}
     />
   );
