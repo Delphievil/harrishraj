@@ -126,4 +126,4 @@ const DynamicSecurityBg: React.FC<DynamicSecurityBgProps> = ({
   );
 };
 
-export default DynamicSecurityBg;
+export default DynamicSecurity;
